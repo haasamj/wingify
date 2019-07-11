@@ -1,0 +1,15 @@
+h1 {
+  color:red;
+}
+
+a {
+  text-decoration:none;
+  background-color: black;
+  color:white;
+  padding:5px;
+}
+
+a:hover {
+  color:red;
+  padding:10px;
+}

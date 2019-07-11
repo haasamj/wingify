@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block bodyblock %}
   <h1>Wingify</h1>
+  {% if user.is_authenticated %}
   <button type="button" onclick="document.getElementById('w').style.display='block'">Show Password</button>
+  <br><br>
   <h2 id="w" style="display:none">{{ hello.name }}</h2>
-</body>
-</html>
+  <a href="{% url 'logout' %}">Logout</a>
+  {% else %}
+  <p>You're not logged in.</p>
+  <a href="{% url 'login' %}">Login</a>
+  {% endif %}
+{% endblock %}
